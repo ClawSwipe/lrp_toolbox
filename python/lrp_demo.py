@@ -93,7 +93,7 @@ for i in I[:10]:
     #render input and heatmap as rgb images
     digit = render.digit_to_rgb(x, scaling = 3)
     hm = render.hm_to_rgb(R, X = x, scaling = 3, sigma = 2)
-    digit_hm = render.save_image([digit,hm],'../heatmap.png')
+    digit_hm = render.save_image([digit, hm], f'../heatmap_{i}.png')
     data_io.write(R,'../heatmap.npy')
 
     #display the image as written to file
