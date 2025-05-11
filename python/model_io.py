@@ -312,8 +312,8 @@ def _write_txt(model,path):
                 '''
 
                 f.write('{0} {1} {2}\n'.format(layer.__class__.__name__,layer.m,layer.n))
-                f.write(' '.join([f'float({float(w)})' for w in layer.W.flatten()]) + '\n')
-                f.write(' '.join([f'float({float(b)})' for b in layer.B.flatten()]) + '\n')
+                f.write(' '.join([repr(float(w)) for w in layer.W.flatten()]) + '\n')
+                f.write(' '.join([repr(float(b)) for b in layer.B.flatten()]) + '\n')
             
 
 
@@ -335,8 +335,8 @@ def _write_txt(model,path):
                     layer.stride[0],\
                     layer.stride[1]
                 ))
-                f.write(' '.join([f'float({float(w)})' for w in layer.W.flatten()]) + '\n')
-                f.write(' '.join([f'float({float(b)})' for b in layer.B.flatten()]) + '\n')
+                f.write(' '.join([repr(float(w)) for w in layer.W.flatten()]) + '\n')
+                f.write(' '.join([repr(float(b)) for b in layer.B.flatten()]) + '\n')
 
             elif isinstance(layer,SumPool):
                 '''
